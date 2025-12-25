@@ -1,0 +1,26 @@
+# --- Rust Specific ---
+/target/
+**/*.rs.bk
+Cargo.lock
+
+# --- OS Specific ---
+.DS_Store
+Thumbs.db
+*.pdb
+
+# --- IDEs ---
+.vscode/
+.idea/
+*.swp
+
+# --- AI & Environment Secrets (CRITICAL) ---
+.env
+api_key.txt
+ai_tasks.json
+batch_results.json
+
+# --- Input Files ---
+tasks.txt
+
+# --- Output Files ---
+task.json
