@@ -126,15 +126,4 @@ This project is licensed under the MIT License. See the LICENSE file for details
 Mahamad Zaid
 Rust, Systems Programming, AI Integration
 
-```
 
----
-
-If you want, I can now:
-- Make it ATS/portfolio optimized
-- Add environment variable support to the README
-- Add a clean architecture or flow explanation
-- Write a short project description for resumes or LinkedIn
-
-Just tell me.
-```
