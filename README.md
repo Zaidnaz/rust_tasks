@@ -1,60 +1,98 @@
-Rust AI Task Categorizer
-A high-performance command-line interface tool built in Rust that utilizes the Gemini 2.5 Flash API to classify unstructured text tasks into structured categories. This project demonstrates the implementation of asynchronous networking, safe JSON serialization, and robust error handling in a systems programming environment.
+# Rust AI Task Categorizer
 
-Project Overview
-The Rust AI Task Categorizer bridges the gap between local data management and cloud-based Large Language Models. By leveraging Rust's memory safety and the Tokio runtime, the application processes batch tasks efficiently without the overhead of a garbage collector.
+A high-performance command-line interface (CLI) tool built in Rust that uses the Gemini 2.5 Flash API to classify unstructured text tasks into structured categories.
 
-Technical Features
-Asynchronous Architecture: Utilizes the Tokio runtime for non-blocking I/O operations, ensuring high throughput during network requests.
+This project demonstrates asynchronous networking, type-safe JSON serialization, and robust error handling in a systems programming environment.
 
-Type-Safe Serialization: Employs the Serde framework to guarantee that data structures remain consistent between the application and the JSON output.
+---
 
-API Resiliency: Includes logic to detect and report API quota limitations and network timeouts.
+## Project Overview
 
-Batch Processing: Capable of reading multi-line input files and aggregating categorized results into a single formatted document.
+The Rust AI Task Categorizer bridges local batch processing with cloud-based Large Language Models (LLMs). Leveraging Rust’s memory safety guarantees and the Tokio async runtime, the application efficiently processes task lists without the overhead of a garbage collector.
 
-Prerequisites
-Rust Toolchain: Version 1.92 or higher.
+It is designed for developers who want a fast, reliable, and scalable way to categorize text-based tasks using modern AI APIs.
 
-Google AI Studio Credentials: A valid API key for the Gemini 2.5 Flash model.
+---
 
-Installation and Configuration
-1. Repository Setup
-Clone the repository to your local machine:
+## Technical Features
 
-Bash
+- Asynchronous Architecture  
+  Uses the Tokio runtime for non-blocking I/O, enabling high throughput during API requests.
 
+- Type-Safe Serialization  
+  Implements serde and serde_json to ensure strict consistency between Rust data structures and JSON output.
+
+- API Resiliency  
+  Detects and reports API quota limits, invalid responses, and network timeouts gracefully.
+
+- Batch Processing  
+  Reads multi-line input files and aggregates categorized results into a single formatted JSON output.
+
+---
+
+## Prerequisites
+
+- Rust Toolchain: Version 1.92 or higher  
+- Google AI Studio Credentials: A valid API key for the Gemini 2.5 Flash model
+
+---
+
+## Installation and Configuration
+
+### 1. Clone the Repository
+
+```bash
 git clone https://github.com/Zaidnaz/rust_tasks.git
 cd rust_tasks
-2. Dependency Resolution
-Ensure all necessary crates are fetched and compiled:
+````
 
-Bash
+### 2. Build Dependencies
 
+Fetch and compile all required crates:
+
+```bash
 cargo build
-3. Environment Configuration
-Update the api_key variable in src/main.rs with your Gemini API credentials.
+```
 
-Usage Guide
-Preparing Input
-Create a file named tasks.txt in the root directory with one task per line:
+### 3. Configure API Key
 
-Plaintext
+Update the `api_key` variable in `src/main.rs` with your Gemini API key:
 
+```rust
+let api_key = "YOUR_API_KEY_HERE";
+```
+
+For production use, storing API keys in environment variables is strongly recommended.
+
+---
+
+## Usage Guide
+
+### Preparing Input
+
+Create a file named `tasks.txt` in the project root directory. Each line should contain one task:
+
+```txt
 Refactor the authentication logic in the backend
 Buy groceries for the weekend
 Develop a smart contract for a crowdfunding dApp
-Executing the Program
-Initiate the categorization process:
+```
 
-Bash
+### Running the Application
 
+Execute the categorization process:
+
+```bash
 cargo run
-Output Format
-The application generates batch_results.json in the following format:
+```
 
-JSON
+---
 
+## Output Format
+
+The application generates a file named `batch_results.json` with categorized results:
+
+```json
 [
   {
     "text": "Refactor the authentication logic",
@@ -65,12 +103,38 @@ JSON
     "category": "Personal"
   }
 ]
-Dependency Information
-tokio: Multi-threaded runtime for async functions.
+```
 
-reqwest: HTTP client for API communication.
+---
 
-serde / serde_json: Framework for data serialization.
+## Dependencies
 
-License
+* tokio – Multi-threaded async runtime
+* reqwest – HTTP client for API communication
+* serde / serde_json – Safe and efficient data serialization
+
+---
+
+## License
+
 This project is licensed under the MIT License. See the LICENSE file for details.
+
+---
+
+## Author
+
+Mahamad Zaid
+Rust, Systems Programming, AI Integration
+
+```
+
+---
+
+If you want, I can now:
+- Make it ATS/portfolio optimized
+- Add environment variable support to the README
+- Add a clean architecture or flow explanation
+- Write a short project description for resumes or LinkedIn
+
+Just tell me.
+```
